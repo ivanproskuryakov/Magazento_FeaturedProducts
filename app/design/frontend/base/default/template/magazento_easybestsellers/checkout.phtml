@@ -1,0 +1,42 @@
+<?php
+$storeId = Mage::app()->getStore()->getId();
+$collection = $this->getCheckoutItems($storeId);
+if ($collection):
+    ?>
+
+    <script type="text/javascript">
+        document.observe('dom:loaded', function() {
+            new Control.Tabs('magazento_easybestsellers');
+        });
+    </script>
+
+    <div class="magazento_easybestsellers_box" id="main-ops-container">
+        <ul id="magazento_easybestsellers" class="subsection_tabs">  
+            <?php foreach ($collection as $item): ?>
+                <li class="tab first extra-class1 left">
+                    <span class="tab-link" ><a onclick="return false" href="#mainops<?php echo $item->getId(); ?>" class=""> <?php echo $item->getTitle(); ?></a></span>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        <div>
+            <?php foreach ($collection as $item): ?>
+                <div id="mainops<?php echo $item->getId(); ?>" style="">
+                    <div class="block block-easybestsellers">
+                        <div class="block-content">    
+                            <div class="easy-content-top"><?php echo $item->getContentTop(); ?></div>
+                            <?php $this->getChild($item->getBestsellerType())->setData('item_id', $item->getId()); ?>
+                            <?php $this->getChild($item->getBestsellerType())->setData('item_count', $item->getCount()); ?>
+                            <?php $this->getChild($item->getBestsellerType())->setData('item_colcount', $item->getColcount()); ?>
+                            <?php $this->getChild($item->getBestsellerType())->setData('item_display_type', $item->getDisplayType()); ?>
+                            <?php $this->getChild($item->getBestsellerType())->setData('item_bestsellercategory', $item->getBestsellercategory()); ?>
+                            <?php echo $this->getChildHtml($item->getBestsellerType(),false); ?>
+                            <div class="easy-content-bottom"><?php echo $item->getContentBottom(); ?></div>
+                        </div> 
+                    </div> 
+                </div> 
+            <?php endforeach; ?>        
+        </div>
+    </div>
+
+<?php endif; ?>
+

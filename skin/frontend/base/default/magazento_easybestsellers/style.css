@@ -1,0 +1,301 @@
+.block-easybestsellers {
+    font-size: 11px;
+    line-height: 1.25;
+    }
+.block-easybestsellers .easyproducts-grid {
+    background: none;
+    border-bottom: 0;
+    width: 100%;    
+    display: block;
+    float: left;
+}
+
+.content-home-wrapper { padding: 10px;}
+
+.block-easybestsellers .title-homepage-new {
+    background: none repeat scroll 0 0 #E46404;
+}
+.block-easybestsellers .title-homepage-topsellers {
+    background: none repeat scroll 0 0 #93C627;
+}
+.block-easybestsellers .title-homepage-popular {
+    background: none repeat scroll 0 0 #CC3112;
+}
+.block-easybestsellers .title-homepage-toprated {
+    background: none repeat scroll 0 0 #709CC1;
+}
+.block-easybestsellers .title-homepage-reviews {
+    background: none repeat scroll 0 0 #336699;
+}
+
+.block-easybestsellers .block-title {
+    border-bottom: 1px solid #CACACA;
+    height: 25px;
+    overflow: hidden;
+}
+
+.block-easybestsellers .block-title span {
+    color: #FFFFFF;
+    font: bold 12px/2em Arial,Helvetica,sans-serif;
+    padding: 12px 0 3px 10px;
+    text-transform: uppercase;
+}
+.block-easybestsellers .block-title span {
+    color: #FFFFFF;
+    font: bold 12px/2em Arial,Helvetica,sans-serif;
+    padding: 12px 0 3px 10px;
+    text-transform: uppercase;
+}
+.block-easybestsellers .block-content {
+    background: #F4F3F3;
+    min-height: 200px;
+    padding: 10px;
+    }
+.block-easybestsellers .block-content li.item {
+    padding: 7px 4px;
+    float: left;
+    display: block;
+    }
+    
+.block-easybestsellers .block-content button.button {
+    overflow: visible;
+    width: auto;
+    padding: 2px 7px;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid #DE5400;
+    background: #F18200;
+    color: white;
+    font-weight: bold;
+}    
+
+
+.block-easybestsellers .block-content .product-name {
+    color: #1E7EC8;
+    color: #203548;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.block-easybestsellers .easyproducts-grid .product-name a {
+    color: #1E7EC8;
+}
+.block-easybestsellers .easyproducts-grid .product-image {
+    display: block;
+    height: 135px;
+    margin: 0 0 10px;
+    width: 135px;
+}
+.block-easybestsellers .easyproducts-grid .price-box {
+    margin: 5px 0;
+}
+.easyproducts-grid li.item {
+float: left;
+width: 138px;
+padding: 12px 10px 80px;
+}
+.easyproducts-grid .product-image {
+display: block;
+width: 135px;
+height: 135px;
+margin: 0 0 10px;
+}
+
+.block-easybestsellers .block-easybestsellers a {
+    font-size: 12px;
+    font-weight: bold;
+}
+.block-easybestsellers .product-name a {
+    color: #1E7EC8;
+}
+
+.block-easybestsellers .link-cart {
+    color: #DC6809 !important;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: underline !important;
+    }
+
+.block-easybestsellers .product-image {
+    float: left;
+    margin-right: 5px;
+    }
+
+.block-easybestsellers img {
+    border: 1px solid #999;
+    }
+
+
+
+.block-easybestsellers dl {
+    float: left;
+    width: 900px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    margin-top: 7px;
+    margin-left: 4px;
+    }
+
+.block-easybestsellers li.odd {
+    background-color: #E5DCC3;
+}
+
+#easybestsellers-no-products {
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-bottom: 40px;
+    }
+    
+.block-easybestsellers .block-content #easybestsellers-no-products li.item {
+    border: 1px solid #B6B6B6;
+    }
+    
+.magazento_easybestsellers_box {
+    margin-top: 15px;
+    clear: both;
+    width: 100%;
+    padding-top: 5px;
+    }
+    
+.magazento_easybestsellers_box .add-to-links {
+    font-size: 10px;
+    margin: 5px 0 0;
+    }    
+    
+.tab-link {
+    float: left;
+    background: #D8D9D9;
+    height: 28px;
+    margin-top: 0px;
+    border-right: 1px solid #999;
+    }
+    
+/* Tabs */
+
+#main-ops-container ul.subsection_tabs {
+list-style: none;
+margin: 0;
+padding: 0;
+clear: both;
+height: 28px;
+border-bottom: 0;
+border-right: 1px solid #999;
+border-top: 1px solid #999;
+border-left: 1px solid #999;
+background: url(img/tab-bg.jpg) 0 0;
+}
+
+#main-ops-container ul.subsection_tabs li {
+	float:left;
+	text-align:center;
+}
+#main-ops-container ul.subsection_tabs li.last {
+	border-right: 0;
+}
+
+#main-ops-container ul.subsection_tabs li.tab a {
+    display: block;
+    padding: 0px 20px 0px 20px;
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    height: 28px;
+    line-height: 30px;
+    text-shadow: 1px 1px #EEE;
+    }
+
+#main-ops-container ul.subsection_tabs li.tab a:hover {
+}
+#main-ops-container ul.subsection_tabs li.tab a {
+
+}
+
+#main-ops-container ul.subsection_tabs li.tab a.active {
+    font-weight: bold;
+    height: 44px;
+    background: #C7C7C7 url("img/tab-hover.png") no-repeat 50% 27px;
+    margin-top: -5px;
+    border-top: 1px solid #999;
+    color: #444;
+    padding-top: 3px;
+    }
+
+#main-ops-container ul.subsection_tabs li.source_code {
+	float:right;
+}
+
+#main-ops-container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2777A1;
+    }
+    
+    
+/*SLIDER*/
+
+div.scroller { 
+    overflow: hidden;
+}
+.firstsliderssamplecontainer a {color:#999}
+div.scroller div.section {
+    overflow:hidden;
+    float:left;
+    padding:0em;
+    padding-left: 1px;
+}
+div.scroller div.content {
+    width: 10000px;
+    padding:0px;
+}
+
+.easyslider .controls { 
+    float:right;
+}
+.easyslider .controls a.slide-nav {
+    display: inline-block;
+    overflow: hidden;
+    /*text-indent: -100em;*/
+    font-size: 0;
+    line-height: 0;
+    background: url(img/carousel_nav.png) no-repeat 0 0;
+    outline: none;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+}
+.easyslider .controls a.slide-nav:hover { 
+    background-position: -46px 0;
+}
+
+.easyslider .control-links a {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;    
+    /*text-indent: -100em;*/
+    background: url(img/carousel_nav.png) no-repeat 0 0;
+    outline: none;
+    width: 10px;
+    height: 10px;
+    margin-left: 4px;
+}
+.easyslider .control-links a.prev {
+    background-position: -91px 0;
+}
+.easyslider .control-links a.next {
+    background-position: -135px 0;
+}
+.easyslider .control-links a.prev:hover {
+    background-position: -179px 0;
+}
+.easyslider .control-links a.next:hover {
+    background-position: -223px 0;
+}
+
+.easy-content-bottom,.easy-content-top {
+    float: left;
+    display: block;
+    width: 100%;
+    }

@@ -1,0 +1,106 @@
+<?php $_products = $this->getProductCollection(); ?>
+<?php $_collectionSize = sizeof($_products); ?>
+<?php $_columnCount = $this->getData('item_colcount'); ?>
+
+<?php $_item_display_type = $this->getData('item_display_type'); ?>
+
+        <?php if (sizeof($_products)): ?>
+<!-- SLIDER RULE START -->
+<?php if ($_item_display_type): ?>
+        <div class="easyslider" id="glider<?php echo $this->getData('item_id') ?>">
+            <?php if ($_collectionSize > $_columnCount ): ?>     
+                <div class="controls" >           
+                    <?php $i=0; foreach($_products as $_rating): ?>            
+                         <?php if ($i++%$_columnCount==0): ?>
+                            <a class="slide-nav" href="#section<?php echo $this->getData('item_id').$i; ?>">  Slide #<?php echo $this->getData('item_id').$i; ?></a>
+                        <?php endif ?>  
+                    <?php endforeach; ?>   
+                </div>    
+                <div class="control-links" >
+                    <a class="prev" href="#" onclick="easyglider<?php echo $this->getData('item_id') ?>.previous();return false;">Previous</a>
+                    <a class="next" href="#" onclick="easyglider<?php echo $this->getData('item_id') ?>.next();return false">Next</a>                
+                </div>          
+            <?php endif; ?>              
+            <div class="scroller">
+                <div class="content">   
+<?php endif ?>     
+<!-- SLIDER RULE END -->                          
+                        
+                        <?php $i=0; foreach ($_products->getItems() as $_product): ?>
+                            <?php if ($i++%$_columnCount==0): ?>
+            
+                            <!-- SLIDER RULE START -->
+                            <?php if ($_item_display_type): ?>            
+                            <div class="section" id="section<?php echo $this->getData('item_id').$i; ?>">
+                            <?php endif ?>     
+                            <!-- SLIDER RULE END -->       
+                            
+                            <ul class="easyproducts-grid">
+                            <?php endif ?>
+
+                                <?php if ($_product->getData('is_salable')): ?>
+                                    <li class="item<?php if($i==sizeof($_products) ): ?> last<?php endif; ?>">
+                                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(130); ?>" width="130" height="130" alt="" /></a>
+                                        <div class="product-details">
+                                            <p class="product-name"><a href="<?php echo $this->getProductUrl($_product) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></p>
+                                            <?php if (Mage::getStoreConfig('easybestsellers/options/price')):?>
+                                                <?php echo $this->getPriceHtml($_product, true) ?>
+                                            <?php endif; ?>
+                                            <?php if (Mage::getStoreConfig('easybestsellers/options/actions')):?>
+                                                <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
+                                                    <?php echo $this->__('Add to Cart') ?>
+                                                </button>             
+                                                <div class="additional-links">    
+                                                    <?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
+                                                    <ul class="add-to-links">
+                                                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                                        <li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, '<?php echo $_wishlistSubmitUrl ?>'); return false;" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                                                    <?php endif; ?>
+                                                    <?php
+                                                        $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product);
+                                                    ?>
+                                                    <?php if($_compareUrl) : ?>
+                                                        <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                                                    <?php endif; ?>
+                                                    </ul>   
+                                                </div>                                            
+                                            <?php endif; ?>
+                                        </div>
+                                    </li>
+                                <?php endif; ?>
+
+                        <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+                        </ul>
+                        <!-- SLIDER RULE START -->
+                        <?php if ($_item_display_type): ?>            
+                        </div>
+                        <?php endif ?>     
+                        <!-- SLIDER RULE END -->                               
+                            
+                        <?php endif ?>
+                    <?php endforeach; ?>
+                        
+<!-- SLIDER RULE START -->
+<?php if ($_item_display_type): ?>                           
+
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            var easyglider<?php echo $this->getData('item_id') ?> = new Glider('glider<?php echo $this->getData('item_id') ?>', {
+                                                    duration:<?php echo Mage::getStoreConfig('easybestsellers/slider/animduration') ?>,
+                                                    autoGlide:<?php echo Mage::getStoreConfig('easybestsellers/slider/autoplay') ?>,
+                                                    frequency:<?php echo Mage::getStoreConfig('easybestsellers/slider/slideduration') ?> });
+        </script>
+<?php endif ?>     
+<!-- SLIDER RULE END --> 
+                
+
+        <?php else: ?>
+            <ol id="easybestsellers-no-products" class="mini-products-list">
+                <li class="item odd">
+                    <?php echo Mage::getStoreConfig('easybestsellers/options/noproduct') ?>
+                </li>
+            </ol>
+        <?php endif; ?>
+            

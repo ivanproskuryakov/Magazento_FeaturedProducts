@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>magazento_easybestsellers/slider.js</name><params/></action>
+            <action method="addJs"><script>magazento_easybestsellers/livepipe.js</script></action>            
+            <action method="addJs"><script>magazento_easybestsellers/tabs.js</script></action>     
+            <action method="addCss"><stylesheet>magazento_easybestsellers/style.css</stylesheet></action>
+        </reference>
+    </default>
+    
+    <checkout_cart_index translate="label">
+        <reference name="content">        
+            <block type="easybestsellers/checkout" before="-" name="magazento_easybestsellers" template="magazento_easybestsellers/checkout.phtml" >
+                <block type="easybestsellers/bestseller"      name="bestseller" template="magazento_easybestsellers/bestseller.phtml"/> 
+                <block type="easybestsellers/new"             name="new"        template="magazento_easybestsellers/new.phtml"/> 
+                <block type="easybestsellers/popular"         name="popular"    template="magazento_easybestsellers/popular.phtml"/> 
+                <block type="easybestsellers/toprated"        name="toprated"   template="magazento_easybestsellers/toprated.phtml"/> 
+                <block type="easybestsellers/review"          name="review"     template="magazento_easybestsellers/review.phtml"/> 
+                <block type="core/template"                   name="blank"/> 
+            </block>
+        </reference>        
+    </checkout_cart_index>
+
+</layout>
+
+
+
+
+
